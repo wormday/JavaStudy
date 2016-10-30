@@ -1,0 +1,8 @@
+001.HelloWorld
+1.代码规范
+Java中package规范是首字母小写
+.net中名称空间命名规范是首字母大写
+类名命名规范一致
+方法命名规范是Java首字母小写，.NET首字母大写
+Java中main方法必须是小写，方法和类都必须是public
+.net中Main方法必须为大写，public和private无所谓
