@@ -19,6 +19,11 @@
 
 可以参考文献
 [eclipse的工程配置（.classpath和.project）文件的作用 http://swiftlet.net/archives/1214](http://swiftlet.net/archives/1214)
+## 002.Type
+默认情况下，类型转换和运算溢出都不抛异常
+.net可以通过checked和unchecked检测
+Java好像没有类似的检测
+http://stackoverflow.com/questions/3001836/how-does-java-handle-integer-underflows-and-overflows-and-how-would-you-check-fo
 
 
 
