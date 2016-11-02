@@ -8,5 +8,6 @@ public class HelloWorld {
 		Message m=new Message();
 		System.out.println(m.getMessage());
 		System.out.println((byte)10000);
+		System.out.println(0/0);
 	}
 }
