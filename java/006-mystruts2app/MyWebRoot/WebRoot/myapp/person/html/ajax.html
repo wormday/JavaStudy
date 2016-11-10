@@ -1,0 +1,141 @@
+<script language="javascript">
+	var xmlHttp=false;
+	var xmlDoc;
+	//get xml context--javascript DOM
+	function getXMLHandler(xmlFile){		
+		if(window.ActiveXObject){
+			xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async=false;
+			xmlDoc.onreadystatechange = function() {
+				if(xmlDoc.readyState == 4) doAction();
+			}
+			xmlDoc.load(xmlFile);
+		}else if(document.implementation&&document.implementation.createDocument){
+			xmlDoc=document.implementation.createDocument('','',null);
+			xmlDoc.onload=doAction();
+			xmlDoc.load(xmlFile);
+		}else return null;
+		return xmlDoc;
+	}
+	
+	//get html node markhtml
+	function getNodeById(nodeName){
+		return document.getElementById(nodeName);
+	}
+	
+	//get node array
+	function getNodeArray(doc,nodeName){
+		var nodeArray=doc.getElementsByTagName(nodeName);
+		return nodeArray;
+	}
+	
+	//tour all nodes array values
+	function outputList(nodeArray,childNodeIndex){
+		var out="";
+		for(var i=0;i<nodeArray.length;i++){
+			out=out + "\n- " + nodeArray[i].childNodes[childNodeIndex].nodeValue;
+		}
+		alert(out);
+	}
+	
+	//clear all subnodes under supernode
+	function removeAllChildNodes(parentNode){
+		var ind=parentNode.childNodes.length;
+		for(var i=ind-1;i>=0;i--){
+			parentNode.removeChild(parentNode.childNodes[i]);
+		}
+	}
+	
+	//get current node value,usually the index parameter is equal 0
+	function getNodeValue(curNode,index){
+		var nodeValue=curNode.childNodes[index].nodeValue;
+		return nodeValue;
+	}
+	
+	//create node
+	function createNodeWithValue(nodeName,nodeVaule){
+		var header=document.createElement(nodeName);
+		var headerText=document.createTextNode(nodeVaule);
+		header.appendChild(headerText);
+		return header;
+	}
+	
+	//create no value node
+	function createNodeWithoutValue(nodeName){
+		var header=document.createElement(nodeName);
+		return header;
+	}
+	
+	function createXMLHttpRequest(){
+		if (window.XMLHttpRequest) { // Mozilla, Safari,...
+            xmlHttp = new XMLHttpRequest();
+            if (xmlHttp.overrideMimeType) {
+                xmlHttp.overrideMimeType('text/xml');
+            }
+        } else if (window.ActiveXObject) { // IE
+            try {
+                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+		
+	}
+	
+	function handleStateChange(){
+		if(xmlHttp.readyState==4){
+			if (xmlHttp.status == 200) {
+                doAction();
+            } else {
+                alert('There was a problem with the request.');
+            }
+		}
+	}
+	
+	//create xml and send it to appointment servlet
+	function sendXMLPostActionToServlet(xml,url,urlSymbol){
+		createXMLHttpRequest();
+		url+=urlSymbol + "timeStamp=" + new Date().getTime();
+		xmlHttp.open("POST",url,true);
+		xmlHttp.onreadystatechange=handleStateChange;
+		xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;");
+		xmlHttp.send(xml);
+	}
+	
+	//send param to appointment servlet
+	function sendGetActionToServlet(url){
+		createXMLHttpRequest();
+		xmlHttp.open("GET",url,true);
+		xmlHttp.onreadystatechange=handleStateChange;
+		xmlHttp.send(null);
+	}
+	
+	//send xml head infomation
+	function sendXMLHeaderInfo(url){
+		createXMLHttpRequest();
+		xmlHttp.onreadystatechange=handleStateChange;
+		xmlHttp.open("HEAD",url,true);
+		xmlHttp.send(null);
+	}
+	
+	//get xml context--xmlHttp
+	function setXMLDocument(){
+		xmlDoc=xmlHttp.responseXML;
+	}
+	
+	//return absolute position of the mark in html
+	function getHtmlObjPos(htmlObj){
+		var top=htmlObj.offsetTop;
+		var left=htmlObj.offsetLeft;
+		while(htmlObj=htmlObj.offsetParent){
+			top+=htmlObj.offsetTop;
+			left+=htmlObj.offsetLeft;
+		}
+		var array=new Array(2);
+		array[0]=top;
+		array[1]=left;
+		return array;
+	}
+</script>

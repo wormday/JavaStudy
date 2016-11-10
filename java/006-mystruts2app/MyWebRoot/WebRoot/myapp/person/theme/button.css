@@ -1,0 +1,112 @@
+.btn_mouseout
+{
+    border-right: #2C59AA 1px solid;
+    padding-right: 2px;
+    border-top: #2C59AA 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
+    border-left: #2C59AA 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #2C59AA 1px solid;
+}
+.btn_mouseover
+{
+    border-right: #2C59AA 1px solid;
+    padding-right: 2px;
+    border-top: #2C59AA 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#D7E7FA);
+    border-left: #2C59AA 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #2C59AA 1px solid;
+}
+.btn_mousedown
+{
+    border-right: #FFE400 1px solid;
+    padding-right: 2px;
+    border-top: #FFE400 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
+    border-left: #FFE400 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #FFE400 1px solid;
+}
+.btn_mouseup
+{
+    border-right: #2C59AA 1px solid;
+    padding-right: 2px;
+    border-top: #2C59AA 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
+    border-left: #2C59AA 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #2C59AA 1px solid;
+}
+.btn_move
+{
+    border-right: #2C59AA 1px solid;
+    padding-right: 2px;
+    border-top: #2C59AA 1px solid;
+    padding-left: 2px;
+    font-size: 12px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
+    border-left: #2C59AA 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #2C59AA 1px solid;
+    width:40px; 
+}
+.select{
+    position: relative;
+    left: -2px;
+    top: -2px;
+    line-height: 14px;
+    border-style: none;
+    border-width: 0px; 
+}
+<!--
+.link {font-size: 12px}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+a:active{color:#666666;text-decoration:none}   
+  a:link{color:#666666;text-decoration:none}   
+  a:visited{color:#666666;text-decoration:none}   
+  a:hover{color:#666666;text-decoration:none}   
+-->
+
+.center   {jeffery:expression(this.align="center")}  
+
+.tdbg {
+	background-color: deeef8;
+}
+.tdColumnbg {
+	background-color: 00a5ea;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.titlebg {
+	background-image: url(../images/gradient_tcat1.gif);
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+  
