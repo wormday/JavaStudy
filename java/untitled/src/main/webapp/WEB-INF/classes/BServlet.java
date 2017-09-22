@@ -7,6 +7,8 @@ import java.io.IOException;
 /**
  * Created by sunwq on 2016/12/2.
  */
+
+@ContextConfiguration
 public class BServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

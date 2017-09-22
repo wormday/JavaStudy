@@ -13,6 +13,7 @@
 </head>
 <body>
 <%!
+
     @Autowired
     private net.ICompactDisc oo;
 

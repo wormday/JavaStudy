@@ -8,23 +8,33 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 
 /**
  * Created by sunwq on 2016/12/4.
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("Controller")
+@ComponentScan
 public class WebConfig extends WebMvcConfigurerAdapter {
-    @Bean
-    public ViewResolver viewResolver()
-    {
-        System.out.println("WebConfig.viewResolver");
-        InternalResourceViewResolver resolver=new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views");
-        resolver.setSuffix(".jsp");
-        resolver.setExposeContextBeansAsAttributes(true);
-        return resolver;
+//    @Bean
+//    public ViewResolver viewResolver()
+//    {
+//        System.out.println("WebConfig.viewResolver");
+//        InternalResourceViewResolver resolver=new InternalResourceViewResolver();
+//        resolver.setPrefix("/WEB-INF/views");
+//        resolver.setSuffix(".jsp");
+//        resolver.setExposeContextBeansAsAttributes(true);
+//        return resolver;
+//    }
+
+    @Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+        System.out.println("WebConfig.configureViewResolvers");
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setSuffix(".jsp");
+        registry.viewResolver(viewResolver);
     }
 
     @Override
