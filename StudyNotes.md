@@ -25,6 +25,23 @@
 Java好像没有类似的检测
 http://stackoverflow.com/questions/3001836/how-does-java-handle-integer-underflows-and-overflows-and-how-would-you-check-fo
 
+##Maven
+* Idea Maven Projects里边的命令对应的是相应的Maven命令
+* Plugins里边是相当于<build><plugins><plugin>
+  Plugin也有对应的groupId和artifactId以及version
+* 编译时有警告[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+  需要添加<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+* .jar就是一个压缩包，可以解压
+* clean删除target文件夹
+* compile生成class文件到/target/下
+* package生成.jar文件，直接package会自动调用compile
+
+##java编译编译
+* javac用于把编译 **.java 编译成 **.class
+* javac com/sunwq/a/b/*.java 可以这样编译整个文件夹
+* java com.sunwq.a.b.HelloWorld这样执行，java会自动从相应的路径寻找class文件
+
+
 
 
 
